@@ -1,8 +1,6 @@
 ---
 title: "BASICs in R - exercises"
-author: "Morten Rasmussen"
-date: "1/10/2019"
-output: pdf_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

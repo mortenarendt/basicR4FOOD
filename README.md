@@ -13,6 +13,26 @@ GC-Cheese (cheese_aromas.xlsx): Aromaprofiling of chesses produces under differe
 
 Mouse (Mouse_diet_intervention.xlsx): Dietary effects of whey, casein as well as high low fat diet on growth and biomarkers in a mice model. 
 
+## Additional material 
+
+### Notes from the _Data Analysis in Food Science_ course
+There is a lot of online available material on statistics using R. The [Notes for Data Analysis in Food Science](https://github.com/mortenarendt/basicR4FOOD/blob/master/Notes_FDA.pdf) covers basic data analysis in eight weeks. Data for most of the content there is to be found [here](https://github.com/mortenarendt/DataAnalysisinFoodScience/) and can be downloaded directly in R using the _devtools_ package: 
+
+```{r}
+devtools::install_github('mortenarendt/DataAnalysisinFoodScience')
+library(DAinFoodScience)
+data("maramaox") 
+```
+
+### Cheatsheets
+
+RStudio has made available [Cheatsheets](https://www.rstudio.com/resources/cheatsheets/) covering the utility of different packages, such as _ggplot2_. These are very condensed, but also very usefull for checking out what you can do with a particular package. 
+
+### Videos
+
+For the _Data Analysis in Food Science_ course, there is a bunch of videos available going through theory and _How to_ in R. These can be found on youtube [here](https://www.youtube.com/playlist?list=PL4L59zaizb3FmBdxuDLRdzGsknTrZN6Ys). 
+
+
 ## Import 
 
 Download the excel datafiles to an appropriate location on your computer. Further, install the _rio_ package 
