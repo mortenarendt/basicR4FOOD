@@ -68,13 +68,13 @@ aggregate(X$Intensity, list(X$Sample),mean)
 ```
 ... Now lets do it for all attributes. 
 
-```{r}
+```{r,warning=FALSE}
 aggregate(X, list(X$Sample),mean)
 ```
 
 ... And lets get some more summary stats returned as well
 
-```{r}
+```{r,warning=FALSE}
 aggregate(X, list(X$Sample),function(x) c(length(x), mean(x), sd(x)))
 ```
           
@@ -102,7 +102,7 @@ ggplot(data = X, aes(Sample, Intensity, color = factor(Assessor), group = factor
 
 In stead of the raw data you might want to see the means of each design cell (temperature and assessor). That we can calculate as described above with aggregate(). and plot it!
 
-```{r}
+```{r,warning=FALSE}
 Xm <- aggregate(X, list(X$Sample, X$Assessor),mean)
 colnames(Xm)[1] <- 'Temp'
 ggplot(data = Xm, aes(Temp, Intensity, color = factor(Assessor), group = factor(Assessor))) + 
