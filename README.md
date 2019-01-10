@@ -3,6 +3,7 @@ title: "basicR4FOOD"
 output:
   html_document:
     keep_md: true
+    toc: true
 ---
 
 
@@ -86,26 +87,6 @@ aggregate(X, list(X$Sample),mean)
 ```
 
 ```
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-```
-
-```
 ##   Group.1 Sample Assessor Replicate Intensity     Sour    Bitter    Sweet
 ## 1     31C     NA      4.5       2.5  8.306250 8.451562  9.487500 3.285938
 ## 2     37C     NA      4.5       2.5  8.620313 9.075000  8.873437 4.143750
@@ -127,66 +108,6 @@ aggregate(X, list(X$Sample),mean)
 
 ```r
 aggregate(X, list(X$Sample),function(x) c(length(x), mean(x), sd(x)))
-```
-
-```
-## Warning in mean.default(x): argument is not numeric or logical: returning
-## NA
-```
-
-```
-## Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm
-## = na.rm): NAs introduced by coercion
-```
-
-```
-## Warning in mean.default(x): argument is not numeric or logical: returning
-## NA
-```
-
-```
-## Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm
-## = na.rm): NAs introduced by coercion
-```
-
-```
-## Warning in mean.default(x): argument is not numeric or logical: returning
-## NA
-```
-
-```
-## Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm
-## = na.rm): NAs introduced by coercion
-```
-
-```
-## Warning in mean.default(x): argument is not numeric or logical: returning
-## NA
-```
-
-```
-## Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm
-## = na.rm): NAs introduced by coercion
-```
-
-```
-## Warning in mean.default(x): argument is not numeric or logical: returning
-## NA
-```
-
-```
-## Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm
-## = na.rm): NAs introduced by coercion
-```
-
-```
-## Warning in mean.default(x): argument is not numeric or logical: returning
-## NA
-```
-
-```
-## Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm
-## = na.rm): NAs introduced by coercion
 ```
 
 ```
@@ -268,155 +189,6 @@ In stead of the raw data you might want to see the means of each design cell (te
 
 ```r
 Xm <- aggregate(X, list(X$Sample, X$Assessor),mean)
-```
-
-```
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(X[[i]], ...): argument is not numeric or logical:
-## returning NA
-```
-
-```r
 colnames(Xm)[1] <- 'Temp'
 ggplot(data = Xm, aes(Temp, Intensity, color = factor(Assessor), group = factor(Assessor))) + 
   geom_point() + geom_line()

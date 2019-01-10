@@ -3,6 +3,7 @@ title: "basicR4FOOD"
 output:
   html_document:
     keep_md: true
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
