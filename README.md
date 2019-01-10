@@ -33,7 +33,7 @@ RStudio has made available [Cheatsheets](https://www.rstudio.com/resources/cheat
 For the _Data Analysis in Food Science_ course, there is a bunch of videos available going through theory and _How to_ in R. These can be found on youtube [here](https://www.youtube.com/playlist?list=PL4L59zaizb3FmBdxuDLRdzGsknTrZN6Ys). 
 
 
-## Import 
+## Import data
 
 Download the excel datafiles to an appropriate location on your computer. Further, install the _rio_ package 
 (This you only need to do ones). 

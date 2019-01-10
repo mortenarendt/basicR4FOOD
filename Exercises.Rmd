@@ -1,6 +1,10 @@
 ---
 title: "BASICs in R - exercises"
-output: html_document
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Your Vignette Title}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include=FALSE}
