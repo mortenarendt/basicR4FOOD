@@ -1,3 +1,13 @@
+-   [Set libraries and Import data](#set-libraries-and-import-data)
+-   [Summary statistics](#summary-statistics)
+-   [Plot of data](#plot-of-data)
+    -   [Boxplot with points on top](#boxplot-with-points-on-top)
+    -   [Scatter plot of two aroma compounds](#scatter-plot-of-two-aroma-compounds)
+    -   [Lineplot with errorbars](#lineplot-with-errorbars)
+-   [T-test](#t-test)
+-   [Linear models and ANOVA](#linear-models-and-anova)
+-   [PCA](#pca)
+
 Cheese has been produced with, and without maturation culture to accelerate/differentiate maturation. Aroma profiling is obtained from cheeses of age 4, 7 and 10 weeks.
 
 Set libraries and Import data
