@@ -12,15 +12,22 @@ output:
 Course materiale for intensive R course at Dept FOOD UPCH 
 
 ## Program
-Where: Copenhagen Plant Science Center aud 1 (CPSC1)
-When: Tuesday, January 22nd, 2019
+__Where__: Copenhagen Plant Science Center aud 1 (CPSC1)
 
-10-11	: R environment, Import data, data.frame as the _golden object_, simple plot (hist()) 
-11-12	: Descriptives (table(), aggregate())
-12-13 : Lunch and Data-social
-13-14	: ggplot2 [scatterplots, barcharts, boxplot, jitter]
-14-15	: linear models and t.test
-15-16	: PCA with ggbiplot and extraction of scores/loads -> into data.frame and ggplot2 plots
+__When__: Tuesday, January 22nd, 2019
+
+__10-11__	: R environment, Import data, data.frame as the _golden object_, simple plot (hist()) 
+
+__11-12__	: Descriptives (table(), aggregate())
+
+__12-13__	: Lunch and Data-social
+
+__13-14__	: ggplot2 [scatterplots, barcharts, boxplot, jitter]
+
+__14-15__	: linear models and t.test
+
+__15-16__	: PCA with ggbiplot and extraction of scores/loads -> into data.frame and ggplot2 plots
+
 
 ## Installation of R and Rstudio
 Take a look in the file [installation_guide](https://github.com/mortenarendt/basicR4FOOD/blob/master/Installation_guide.pdf)
