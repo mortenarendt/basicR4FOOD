@@ -65,13 +65,13 @@ For the _Data Analysis in Food Science_ course, there is a bunch of videos avail
 ## Import data
 
 Download the excel datafiles to an appropriate location on your computer. Further, install the _rio_ package 
-(This you only need to do ones). 
+(This you only need to do once). 
 
 
 ```r
 install.packages('rio')
 ```
-Make a script containing the stuff below, save the file in the same place as the data, andset the working directory to source file location using Session > Set Working Directory. 
+Make a script containing the stuff below, save the file in the same place as the data, and set the working directory to the source file location using Session > Set Working Directory. 
 
 
 ```r
@@ -81,7 +81,7 @@ X <- import('data/Temperature_Coffee.xlsx')
 
 ## Summary stats
 
-Lets calculate the mean for the attribute _Intensity_ for each temperature setting
+Lets calculate the mean for the attribute _Intensity_ (one of the variables in the dataset) for each temperature setting
 
 
 ```r
@@ -181,7 +181,7 @@ First, import the package _ggplot2_
 install.packages('ggplot2')
 ```
 
-Now lets make a plot of the Intensity (on the y-axis) versus the temperature (on the x-axis) and color all the responses according to the Assessor
+Now let's make a plot of the Intensity (on the y-axis) versus the temperature (on the x-axis) and color all the responses according to the Assessor
 
 
 ```r
@@ -191,7 +191,7 @@ ggplot(data = X, aes(Sample, Intensity, color = factor(Assessor))) +
 ```
 
 ![](README_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
-Now, lets join the points within each assessor (and replicate), and furhter, plot each replicate in its own panel. 
+Now, lets join the points within each assessor (and replicate), and further, plot each replicate in its own panel. 
 
 
 ```r
@@ -202,7 +202,7 @@ ggplot(data = X, aes(Sample, Intensity, color = factor(Assessor), group = factor
 
 ![](README_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
-In stead of the raw data you might want to see the means of each design cell (temperature and assessor). That we can calculate as described above with aggregate(). and plot it!
+Instead of the raw data you might want to see the means of each design cell (temperature and assessor). We can calculate that as described above with aggregate() - and plot it!
 
 
 ```r
