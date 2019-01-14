@@ -1,12 +1,3 @@
----
-title: "Exercise - Aroma-profiling in Cheese"
-output:
-  html_document:
-    number_sections: true
-    keep_md: true
----
-
-
 
 
 Cheese has been produced with, and without maturation culture to accelerate/differentiate maturation.
