@@ -12,7 +12,7 @@ editor_options:
 
 
 Cheese has been produced with, and without maturation culture to accelerate/differentiate maturation.
-Aroma profiling is obtained from cheeses of age $4$, $7$ and $10$ weeks. 
+Aroma profiling is obtained from cheeses of age $$4$$, $$7$$ and $$10$$ weeks. 
 
 
 # Set libraries and Import data
@@ -130,6 +130,20 @@ Or in a more comprehensive way, simply _only_ include the data which you want to
 ```r
 t.test(data = X[X$time_weeks %in% c(7,10) & X$maturation_culture=='culture',], 
        `1Butanol` ~ time_weeks)
+```
+
+```
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  1Butanol by time_weeks
+## t = 2.177, df = 8.5567, p-value = 0.05898
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.003492978  0.150944876
+## sample estimates:
+##  mean in group 7 mean in group 10 
+##         7.391145         7.317419
 ```
 
 In any case you should get exactly the same answer. 
