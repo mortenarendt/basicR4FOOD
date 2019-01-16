@@ -1,3 +1,14 @@
+---
+title: "Exercise - Aroma-profiling in Cheese"
+output:
+  html_document:
+    number_sections: true
+    keep_md: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
 
 
 Cheese has been produced with, and without maturation culture to accelerate/differentiate maturation.
@@ -100,10 +111,36 @@ ggplot(data = Xag, aes(time,mn, color = culture, ymin = mn - sd, ymax = mn+sd)) 
 ![](Exercises_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 # T-test
+In the figure above it is not clear if week 7 and 10 for samples with added culture are significantly different. To find out we can perform a perform a T-test. T-tests can be done by using the function _t.test_ - try to use the commands ?t.test or help(t.test) for help. Try to make a t-test on the difference in 1-butanol between week 7 and 10 for samples with culture.
+
+You could consider to subset the original data.
+
+
+```r
+Xtemp <- subset(X,...)
+w7 <- subset(Xtemp,...)
+w10 <- ...
+
+t.test(w7$`1Butanol`...)
+```
+
+
 
 # Linear models and ANOVA
-Make ANOVA() 
-Extract coefficients()
+In the above example there were three time points and not only the two used for the t.test. If we want to analyse the effect of time we should to an analysis of variance ANOVA. This can be done by making a linear model with lm(y~x). This model can yield the ANOVA table by being passed to the anova function.
+
+* Try to do a ANOVA on the culture samples with all time points (should time points be continuous or discrete?)
+    + subset(X...)
+    + lm(1-butanol~time)
+    + anova(mdl)
+
+* Do the model assumptions hold? (Normally distributed residuals, try plot(mdl))
+* Extract the coefficients and compare them to the line plot above. 
+
+
+This could also be analysed as a two-way anova as there are in fact two design (experimental) factors!
+
+
 
 # PCA
 
