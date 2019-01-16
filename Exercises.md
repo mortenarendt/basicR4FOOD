@@ -124,6 +124,16 @@ w10 <- ...
 t.test(w7$`1Butanol`...)
 ```
 
+Or in a more comprehensive way, simply _only_ include the data which you want to use. 
+
+
+```r
+t.test(data = X[X$time_weeks %in% c(7,10) & X$maturation_culture=='culture',], 
+       `1Butanol` ~ time_weeks)
+```
+
+In any case you should get exactly the same answer. 
+
 
 
 # Linear models and ANOVA
