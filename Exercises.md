@@ -14,6 +14,8 @@ Exercise - Aroma-profiling in Cheese
     -   [Make the PCA model](#make-the-pca-model)
     -   [Plot the model](#plot-the-model)
     -   [Customize the plot from scratch.](#customize-the-plot-from-scratch.)
+        -   [On Scores](#on-scores)
+        -   [On Loadings](#on-loadings)
 
 Cheese has been produced with, and without maturation culture to accelerate/differentiate maturation. Aroma profiling is obtained from cheeses of age *4*, *7* and *10* weeks.
 
