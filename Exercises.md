@@ -3,7 +3,7 @@ Exercise - Aroma-profiling in Cheese
 
 -   [Set libraries and Import data](#set-libraries-and-import-data)
 -   [Summary statistics](#summary-statistics)
--   [Plot of data](#plot-of-data)
+-   [Plot the data](#plot-the-data)
     -   [Boxplot with points on top](#boxplot-with-points-on-top)
     -   [Scatter plot of two aroma compounds](#scatter-plot-of-two-aroma-compounds)
     -   [Lineplot with errorbars](#lineplot-with-errorbars)
@@ -26,17 +26,7 @@ It is a good idea to start the script with setting the libraries you are going t
 
 ``` r
 library(rio)
-```
-
-    ## Warning: package 'rio' was built under R version 3.4.4
-
-``` r
 library(ggplot2)
-```
-
-    ## Warning: package 'ggplot2' was built under R version 3.4.4
-
-``` r
 X <- import('data/cheese_aromas.xlsx')
 ```
 
@@ -57,8 +47,8 @@ aggregate(X$`1Butanol`, list(X$ti...,X$...),function(x) c(length(x), mean(x),...
 Xm <- aggregate(X, list(X$...),...)
 ```
 
-Plot of data
-============
+Plot the data
+=============
 
 Boxplot with points on top
 --------------------------
@@ -76,13 +66,17 @@ ggplot(data = X, aes(time_culture,...)) +
   geom_boxplot() + ...
 ```
 
--   Try to change the x and y labels to make your plot look nicer (hint: add ylab("Your label name here")).
+-   Try to change the x and y labels to make your plot look nicer (hint: add ylab("Your label name here")). To change the size of your axis titles, add: theme(axis.title=element\_text(size=14))
 
--   What do you think the following code does? Try to add it to your plot:
+-   **Extra**: What do you think the following code does? Try to add it to your plot:
 
 ``` r
 theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+
+-   **Extra**: If there is time, play around with the geoms, and try change your previous plots to these (or other variations, if you prefer):
+
+![](Exercises_files/figure-markdown_github/unnamed-chunk-9-1.png)
 
 Scatter plot of two aroma compounds
 -----------------------------------
@@ -103,18 +97,18 @@ ggplot(data = X, aes(`1Butanol`, `1Propanol`,
 
 Could look something like this:
 
-![](Exercises_files/figure-markdown_github/unnamed-chunk-10-1.png)
+![](Exercises_files/figure-markdown_github/unnamed-chunk-11-1.png)
 
 -   **Difficult**: can you figure out if it is possible to have a plot with colors, shapes and ellipses BUT only one straight line?
 
--   **Extra**: Sometimes it is not a good idea to overload plots with information. In this case using both a color and a shape to convey information can be confusing for the reader. Try to remove the shapes and use facet\_wrap(~) to separate the two maturation types into two plots.
+-   **Extra**: Sometimes it is not a good idea to overload plots with information. In this case using both a color and a shape to convey information can be confusing for the reader. Try to remove the shapes and use facet\_wrap(~maturation\_culture) to separate the two maturation types into two plots.
 
 Lineplot with errorbars
 -----------------------
 
 Instead of plotting the raw data, lets plot the mean value and put on some error-bars. Still with the x-axis and y-axis being the same.
 
-We need a bit tricky version of aggregate() to make it work. And furhter some renaming.
+We need a bit tricky version of aggregate() to make it work. And further some renaming.
 
 ``` r
 Xag <- do.call(data.frame,
@@ -128,14 +122,14 @@ colnames(Xag) <- c('time','culture','mn','sd')
 
 -   Try to make a plot that looks like the one below.
 
-Some code to get you started (hint:layer your plot one geom at a time, and use geom\_errorbar() to add the errorbars):
+Some code to get you started (hint: layer your plot one geom at a time, and use geom\_errorbar() to add the errorbars):
 
 ``` r
 ggplot(data = Xag, aes(time,mn, color = culture, ymin = mn - sd, ymax = mn+sd)) + 
   ...
 ```
 
-![](Exercises_files/figure-markdown_github/unnamed-chunk-13-1.png)
+![](Exercises_files/figure-markdown_github/unnamed-chunk-14-1.png)
 
 T-test
 ======
@@ -185,7 +179,7 @@ In the above example there were three time points and not only the two used for 
 -   Do the model assumptions hold? (Normally distributed residuals, try plot(mdl))
 -   Extract the coefficients and compare them to the line plot above.
 
-This could also be analyzed as a two-way anova as there are in fact two design (experimental) factors! `` {r, echo=FALSE}Show in New WindowClear OutputExpand/Collapse Output  Show Traceback Error in loadNamespace(name) : der er ingen pakke med navn 'knitr' Show in New WindowClear OutputExpand/Collapse Output readxl works best with a newer version of the tibble package. You currently have tibble v1.4.2. Falling back to column name repair from tibble <= v1.4.2. Message displays once per session. mdl2 <- lm(X$`1Butanol`~X$maturation_culture*X$time_weeks) plot(mdl2) anova(mdl2) ``
+This could also be analyzed as a two-way anova as there are in fact two design (experimental) factors!
 
 PCA
 ===
@@ -226,23 +220,16 @@ A vanilla version plot of the PCA model looks as follows:
 
 ``` r
 library(ggbiplot)
-```
-
-    ## Warning: package 'plyr' was built under R version 3.4.4
-
-    ## Warning: package 'scales' was built under R version 3.4.4
-
-``` r
 ggbiplot(PCAmdl)
 ```
 
-![](Exercises_files/figure-markdown_github/unnamed-chunk-22-1.png)
+![](Exercises_files/figure-markdown_github/unnamed-chunk-24-1.png)
 
 As this function is engined by ggplot() most of the modification that can be used by ggplot() can also be used here. Specifically, you might want to extend the axes in order to be able to see the labels on the loadings. That is done by adding xlim(c(low\_limit,high\_limit)) to the plot (similarly for ylim()). Try to do this.
 
 The ggbiplot() function can included classes for the scores (that is if the samples are from different groups). In this case we a design, so try to incorporate this via the groups = argument in the function. Further, set the argument ellipse = TRUE to get some even nicer representation.
 
-![](Exercises_files/figure-markdown_github/unnamed-chunk-23-1.png)
+![](Exercises_files/figure-markdown_github/unnamed-chunk-25-1.png)
 
 Customize the plot from scratch.
 --------------------------------
@@ -302,13 +289,13 @@ ggplot(data = scores,aes(PC1,PC2, color = maturation_culture)) +
   geom_vline(xintercept = 0)
 ```
 
-![](Exercises_files/figure-markdown_github/unnamed-chunk-25-1.png)
+![](Exercises_files/figure-markdown_github/unnamed-chunk-27-1.png)
 
 Now try to make modifications to the code to get something like this.
 
 HINT: you will need to play around with facet\_wrap() or facet\_grid(), stat\_ellipse(), theme\_bw() and some general settings in theme().
 
-![](Exercises_files/figure-markdown_github/unnamed-chunk-26-1.png)
+![](Exercises_files/figure-markdown_github/unnamed-chunk-28-1.png)
 
 ### On Loadings
 
@@ -360,7 +347,7 @@ ggplot(data = loadings, aes(PC1, PC2, color = class, label = name, shape = class
   geom_vline(xintercept = 0)  
 ```
 
-![](Exercises_files/figure-markdown_github/unnamed-chunk-28-1.png)
+![](Exercises_files/figure-markdown_github/unnamed-chunk-30-1.png)
 
 You are pretty happy with this plot, but not totally satisfied!
 
@@ -372,6 +359,4 @@ HINT: For the displacement of the labels you'll need a package called ggrepel.
 
 A HARD one: The de-selection of some labels is a pretty hard task, but try to google and see if you can figure this one out!
 
-    ## Warning: package 'ggrepel' was built under R version 3.4.4
-
-![](Exercises_files/figure-markdown_github/unnamed-chunk-29-1.png)
+![](Exercises_files/figure-markdown_github/unnamed-chunk-31-1.png)
