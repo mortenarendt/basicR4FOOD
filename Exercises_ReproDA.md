@@ -34,7 +34,7 @@ Try to exchange / add other output formats like word and pdf. Be aware that this
 
 ``` r
 ---
-title: "My report"
+title: "Vision report FOOD 2020"
 author: "Anna Haldrup"
 date: "today in 2019"
 output: 
