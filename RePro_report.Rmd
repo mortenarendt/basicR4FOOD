@@ -1,0 +1,105 @@
+---
+title: "Example of a Report made in Rmarkdown"
+author: "Morten Rasmussen"
+date: "February 19 - 2019"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 5
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.align = 'right', fig.width = 10)
+```
+
+# Setting libraries
+
+```{r}
+library(rio)
+library(ggplot2)
+```
+
+# Importing Data
+
+First we import data. this can be done in three ways. 
+
+## Relative to current location
+
+```{r}
+X <- import('../BASICs/data/cheese_aromas.xlsx')
+```
+
+## When the data is in the same folder
+
+```{r, eval=FALSE}
+X <- import('cheese_aromas.xlsx')
+```
+
+## Hard coded from the root of the PC
+
+```{r}
+X <- import('~/Dropbox/Backup/MyDocumentsOnC/Course and teaching/FOOD_Rcourses/BASICs/data/cheese_aromas.xlsx')
+```
+
+# A table of data
+
+If we want nice tables in the report, then the two packages knirt and kableExtra is very useful. 
+
+```{r}
+library(knitr)
+library(kableExtra)
+df <- head(X[,1:4],20)
+kable(df,digits = 1, caption = 'Some caption for my nice table')
+
+tb <- kable(df,digits = 1) 
+tb <- kable_styling(tb, "striped", full_width = F) 
+tb <- column_spec(tb, 1:2, bold = T) 
+tb <- row_spec(tb, c(7,19), bold = T, color = "white", background = "#D7261E") 
+tb <- row_spec(tb, c(3,20), bold = T, color = "white", background = "blue")
+tb
+
+```
+
+... Or in the tidyverse way (you'll need tidyverse package installed.)
+
+```{r, eval=FALSE}
+library(tidyverse)
+kable(df,digits = 1) %>%
+  kable_styling("striped", full_width = F) %>%
+  column_spec(1:2, bold = T) %>%
+  row_spec(c(7,19), bold = T, color = "white", background = "#D7261E") %>% 
+  row_spec(c(3,20), bold = T, color = "white", background = "blue")
+```
+
+# A nice Plot
+
+We use ggplot2 for plotting the data in an informative way. 
+
+```{r}
+ggplot(data = X, aes(time_culture,`1Butanol`, fill = maturation_culture)) + 
+  geom_boxplot() + 
+  geom_point() + 
+  ylab('Response - 1-Butanol') + 
+  theme(axis.title=element_text(size=14))
+
+```
+
+# ANOVA of the aromas
+
+After visualization, the data is analysed by ANOVA
+
+```{r}
+mdl <- lm(data = X, `1Butanol` ~ maturation_culture*time_weeks)
+kable(anova(mdl), digits = 3, caption = 'ANOVA table analysing culture and time interactions')
+```
+
+# TOC level 1
+
+## TOC level 2
+
+### TOC level 3
+
+#### TOC level 4
+
+##### TOC level 5
+
