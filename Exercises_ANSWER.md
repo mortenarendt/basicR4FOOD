@@ -39,6 +39,12 @@ It is a good idea to start the script with setting the libraries you are going t
 
 ``` r
 library(rio)
+```
+
+    ## The following rio suggested packages are not installed: 'csvy', 'feather', 'fst', 'hexView', 'readODS', 'rmatio'
+    ## Use 'install_formats()' to install them
+
+``` r
 library(ggplot2)
 X <- import('data/cheese_aromas.xlsx')
 ```
