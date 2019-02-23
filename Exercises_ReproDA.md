@@ -118,15 +118,173 @@ colnames(df) <- c('week','culture','n','mean','sd','min','max')
 kable(df, digits = 1)
 ```
 
-|  week| culture |    n|  mean|   sd|  min|  max|
-|-----:|:--------|----:|-----:|----:|----:|----:|
-|     4| culture |    4|   7.6|  0.0|  7.5|  7.6|
-|     7| culture |    5|   7.4|  0.0|  7.3|  7.4|
-|    10| culture |    6|   7.3|  0.1|  7.2|  7.4|
-|     4| none    |    6|   7.6|  0.0|  7.5|  7.6|
-|     7| none    |    6|   7.7|  0.1|  7.7|  7.8|
-|    10| none    |    5|   7.9|  0.1|  7.8|  8.0|
-
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+week
+</th>
+<th style="text-align:left;">
+culture
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd
+</th>
+<th style="text-align:right;">
+min
+</th>
+<th style="text-align:right;">
+max
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+culture
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+7.6
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+7.5
+</td>
+<td style="text-align:right;">
+7.6
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+culture
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+7.4
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+7.3
+</td>
+<td style="text-align:right;">
+7.4
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+culture
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+7.3
+</td>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:right;">
+7.2
+</td>
+<td style="text-align:right;">
+7.4
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+none
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+7.6
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+7.5
+</td>
+<td style="text-align:right;">
+7.6
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+none
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+7.7
+</td>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:right;">
+7.7
+</td>
+<td style="text-align:right;">
+7.8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+none
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+7.9
+</td>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:right;">
+7.8
+</td>
+<td style="text-align:right;">
+8.0
+</td>
+</tr>
+</tbody>
+</table>
 Nice'r tables
 =============
 

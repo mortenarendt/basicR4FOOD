@@ -5,7 +5,7 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "About"
+    - text: "RePro"
       href: RePro_presentation.html   
     - text: "About2"
       href: about.html
