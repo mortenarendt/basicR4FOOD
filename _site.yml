@@ -21,3 +21,5 @@ navbar:
           href: RePro_report.html
         - text: "An example of a presentation"
           href: RePro_presentation.html
+    - text: 'Data'
+      href: https://github.com/mortenarendt/basicR4FOOD/tree/master/data
