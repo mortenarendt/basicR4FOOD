@@ -6,7 +6,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "About"
-      href: about.html
+      href: RePro_presentation.html   
     - text: "About2"
       href: about.html
     - text: "About3"
