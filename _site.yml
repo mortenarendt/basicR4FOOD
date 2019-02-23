@@ -1,13 +1,23 @@
 name: "my-website"
 output_dir: "."
 navbar:
-  title: "My Assome Website"
+  title: "Basic R courses for FOOD UCPH"
   left:
     - text: "Home"
       href: index.html
+    - text: "BASICs"
+      menu: 
+        - text: "Program and getting started"
+          href: README.html  
+        - text: "Exercises"
+          href: Exercises.html  
+        - text: "Exercises Answers"
+          href: Exercises_ANSWER.html
     - text: "RePro"
-      href: RePro_presentation.html   
-    - text: "About2"
-      href: about.html
-    - text: "About3"
-      href: about.html
+      menu: 
+        - text: "Intro and Exercises"
+          href: Exercises_ReproDA.html
+        - text: "An example of a report"
+          href: RePro_report.html
+        - text: "An example of a presentation"
+          href: RePro_presentation.html
