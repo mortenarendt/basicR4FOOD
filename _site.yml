@@ -1,5 +1,8 @@
 name: "my-website"
 output_dir: "."
+output:
+  html_document:
+    theme: cosmo
 navbar:
   title: "Basic R courses for FOOD UCPH"
   left:
@@ -23,3 +26,5 @@ navbar:
           href: RePro_presentation.html
     - text: 'Data'
       href: https://github.com/mortenarendt/basicR4FOOD/tree/master/data
+    - text: 'Videos'
+      href: https://www.youtube.com/playlist?list=PL4L59zaizb3FmBdxuDLRdzGsknTrZN6Ys
