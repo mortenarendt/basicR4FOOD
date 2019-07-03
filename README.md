@@ -89,6 +89,8 @@ library(rio)
 X <- import('data/Temperature_Coffee.xlsx')
 ```
 
+This dataset contains a total of 192 observations. That is data from a sensory panel of 8 assessors (*Assessor* variabel in the dataframe X), across 6 products - coffee at six different brewing temperatures (*Sample* in the dataframe X), in 4 replicates (*Replicate* in X), assessed on 8 attributes: *Intensity*, *Sour*, *Bitter*, *Sweet*, *Tobacco*, *Roasted*, *Nutty* and *Chocolate* represented as individual columns in X. These attributes are all scored on a 0 to 15 scale.
+
 Summary stats
 =============
 

@@ -75,6 +75,7 @@ body {
 <p>Make a script containing the stuff below, save the file in the same place as the data, and set the working directory to the source file location using Session &gt; Set Working Directory.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rio)
 X &lt;-<span class="st"> </span><span class="kw">import</span>(<span class="st">'data/Temperature_Coffee.xlsx'</span>)</code></pre></div>
+<p>This dataset contains a total of 192 observations. That is data from a sensory panel of 8 assessors (<em>Assessor</em> variabel in the dataframe X), across 6 products - coffee at six different brewing temperatures (<em>Sample</em> in the dataframe X), in 4 replicates (<em>Replicate</em> in X), assessed on 8 attributes: <em>Intensity</em>, <em>Sour</em>, <em>Bitter</em>, <em>Sweet</em>, <em>Tobacco</em>, <em>Roasted</em>, <em>Nutty</em> and <em>Chocolate</em> represented as individual columns in X. These attributes are all scored on a 0 to 15 scale.</p>
 <h1 id="summary-stats">Summary stats</h1>
 <p>Lets calculate the mean for the attribute <em>Intensity</em> (one of the variables in the dataset) for each temperature setting</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(X<span class="op">$</span>Intensity, <span class="kw">list</span>(X<span class="op">$</span>Sample),mean)</code></pre></div>
