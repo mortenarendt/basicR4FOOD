@@ -17,9 +17,9 @@ Course materiale for intensive R course at Dept FOOD UPCH
 Program
 =======
 
-**Where**: Copenhagen Plant Science Center aud 1 (CPSC1)
+**Where**: TBA
 
-**When**: Tuesday, January 22nd, 2019
+**When**: Tuesday, October 27th, 2020
 
 **10-11** : R environment, Import data, data.frame as the *golden object*, simple plot (hist())
 
